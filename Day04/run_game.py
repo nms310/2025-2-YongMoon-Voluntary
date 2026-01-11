@@ -6,7 +6,7 @@ Frame Skip 적용 + TFLite 모델 사용
 """
 
 import numpy as np
-import tensorflow as tf  # ← 라즈베리파이와 다른 부분!
+import tensorflow as tf  # ← 라즈베리파이와 다른 부분
 import time
 import sys
 import os
@@ -43,7 +43,7 @@ class PongAgent:
         self.inference_times = []
         self.total_inferences = 0
         
-        print(f" AI 로드 완료!")
+        print(f" AI 로드 완료")
         print(f"   └─ Frame skip: {frame_skip} (매 {frame_skip}프레임마다 추론)")
         print(f"   └─ 입력 shape: {self.input_details[0]['shape']}")
         print(f"   └─ 출력 shape: {self.output_details[0]['shape']}")
@@ -183,7 +183,7 @@ def main():
         # 2. 게임 환경 초기화
         print(f"\n 게임 환경 초기화 중...")
         env = PongEnv(render_mode=RENDER_MODE, target_fps=Target_FPS)
-        print(f" 게임 환경 로드 완료!")
+        print(f" 게임 환경 로드 완료")
         print(f"\n 팁: ESC 키를 눌러 언제든 종료할 수 있습니다.")
         
         # 3. 게임 통계 변수
@@ -271,4 +271,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print("\n\n  사용자가 게임을 중단했습니다.")
         sys.exit(0)
+
 
